@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-10-23 Sun 18:35 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Using org-mode in research</title>
+<meta name="generator" content="Org-mode" />
+<meta name="author" content="senthil" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Using org-mode in research</h1>
+
+<div id="outline-container-orgc643405" class="outline-2">
+<h2 id="orgc643405"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Emacs is a text editor (short for Editor MAcroS)</li>
+<li>Text editors are much more useful than to just display/edit text</li>
+<li>Plain (UTF-8) text is the best form to preserve data (not a Excel
+file not a JPEG image of a plot!)</li>
+<li>Emacs includes a `mode' called org-mode that is very useful to
+organize data and experiments, carry out analysis using scripts
+and other external programs and store results and all the
+procedures applied to the data in a single location as a simple
+text file.</li>
+<li>Documenting in org-mode is useful in reproducible research.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org309297e" class="outline-2">
+<h2 id="org309297e"><span class="section-number-2">2</span> Org-mode in note taking</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-org1603223" class="outline-3">
+<h3 id="org1603223"><span class="section-number-3">2.1</span> Sections and subsections</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Section titles have one `*', two `**' indicate subsection titles</li>
+<li>Easy to increase or decrease levels of different sectioning</li>
+<li></li>
+
+<li>an item in a list (see below)</li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd05f053" class="outline-3">
+<h3 id="orgd05f053"><span class="section-number-3">2.2</span> Lists</h3>
+<div class="outline-text-3" id="text-2-2">
+</div><div id="outline-container-org1df400e" class="outline-4">
+<h4 id="org1df400e"><span class="section-number-4">2.2.1</span> Bullet points</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li>We already saw how itemized lists are shown in the <a href="#orgc643405">1</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org679657f" class="outline-4">
+<h4 id="org679657f"><span class="section-number-4">2.2.2</span> Numbered lists</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<ul class="org-ul">
+<li>Numbered lists appear like this:
+<ol class="org-ol">
+<li>First item</li>
+<li>Second item</li>
+<li>&#x2026;etc.</li>
+<li></li>
+
+<li></li>
+
+<li></li>
+
+<li></li>
+
+<li></li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7d283d0" class="outline-4">
+<h4 id="org7d283d0"><span class="section-number-4">2.2.3</span> Check list <code>[3/3]</code></h4>
+<div class="outline-text-4" id="text-2-2-3">
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Finish first item</li>
+<li class="on"><code>[X]</code> Then second item</li>
+<li class="on"><code>[X]</code> Finally do the third item in the check list</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org90d1515" class="outline-3">
+<h3 id="org90d1515"><span class="section-number-3">2.3</span> Todo lists <code>[100%]</code></h3>
+<div class="outline-text-3" id="text-2-3">
+</div><div id="outline-container-org1fe4b29" class="outline-4">
+<h4 id="org1fe4b29"><span class="section-number-4">2.3.1</span> <span class="done DONE">DONE</span> Download 16S rRNA sequences from NCBI</h4>
+</div>
+<div id="outline-container-org8a40a72" class="outline-4">
+<h4 id="org8a40a72"><span class="section-number-4">2.3.2</span> <span class="done DONE">DONE</span> Align to SILVA database using mothur</h4>
+</div>
+<div id="outline-container-orge81e244" class="outline-4">
+<h4 id="orge81e244"><span class="section-number-4">2.3.3</span> <span class="done DONE">DONE</span> Manually curate using BioEdit, SeaView, etc.</h4>
+</div>
+<div id="outline-container-org1de9534" class="outline-4">
+<h4 id="org1de9534"><span class="section-number-4">2.3.4</span> <span class="done DONE">DONE</span> Apply hard and soft filter</h4>
+</div>
+<div id="outline-container-orge4ce824" class="outline-4">
+<h4 id="orge4ce824"><span class="section-number-4">2.3.5</span> <span class="done DONE">DONE</span> Calculate distance matrix, construct NJ tree</h4>
+</div>
+<div id="outline-container-org7708b81" class="outline-4">
+<h4 id="org7708b81"><span class="section-number-4">2.3.6</span> <span class="done DONE">DONE</span> Construct ML and MP tree</h4>
+</div>
+<div id="outline-container-org4dbc058" class="outline-4">
+<h4 id="org4dbc058"><span class="section-number-4">2.3.7</span> <span class="done DONE">DONE</span> Edit trees in iTOL</h4>
+</div>
+<div id="outline-container-org1cadaf2" class="outline-4">
+<h4 id="org1cadaf2"><span class="section-number-4">2.3.8</span> <span class="done DONE">DONE</span> Beautify in Inkscape or Illustrator</h4>
+</div>
+</div>
+
+<div id="outline-container-org86b8693" class="outline-3">
+<h3 id="org86b8693"><span class="section-number-3">2.4</span> Tables</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>Tables can be created by hand</li>
+<li>Spreadsheet like capablities</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Subject</th>
+<th scope="col" class="org-right">Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Phy</td>
+<td class="org-right">90</td>
+</tr>
+
+<tr>
+<td class="org-left">Chem</td>
+<td class="org-right">89</td>
+</tr>
+
+<tr>
+<td class="org-left">Biol</td>
+<td class="org-right">70</td>
+</tr>
+
+<tr>
+<td class="org-left">Math</td>
+<td class="org-right">79</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Total</td>
+<td class="org-right">249</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Avg</td>
+<td class="org-right">83</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>Tables can also be created from tab-limited or csv-limited text</li>
+<li>Use command: <code>M-x org-table-convert-region</code></li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">bin</th>
+<th scope="col" class="org-right">N50</th>
+<th scope="col" class="org-right">size</th>
+<th scope="col" class="org-right">ctgs</th>
+<th scope="col" class="org-right">genes</th>
+<th scope="col" class="org-right">markers</th>
+<th scope="col" class="org-right">%cov</th>
+<th scope="col" class="org-right">dup_mark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">b1_m4</td>
+<td class="org-right">6467</td>
+<td class="org-right">7.29</td>
+<td class="org-right">1708</td>
+<td class="org-right">8588</td>
+<td class="org-right">136</td>
+<td class="org-right">108</td>
+<td class="org-right">294</td>
+</tr>
+
+<tr>
+<td class="org-left">b2_m4</td>
+<td class="org-right">5206</td>
+<td class="org-right">5.96</td>
+<td class="org-right">1609</td>
+<td class="org-right">6954</td>
+<td class="org-right">38</td>
+<td class="org-right">30</td>
+<td class="org-right">23</td>
+</tr>
+
+<tr>
+<td class="org-left">hi_m4</td>
+<td class="org-right">21756</td>
+<td class="org-right">1.78</td>
+<td class="org-right">123</td>
+<td class="org-right">1979</td>
+<td class="org-right">58</td>
+<td class="org-right">46</td>
+<td class="org-right">5</td>
+</tr>
+
+<tr>
+<td class="org-left">meta_m4</td>
+<td class="org-right">4738</td>
+<td class="org-right">61.25</td>
+<td class="org-right">20730</td>
+<td class="org-right">76130</td>
+<td class="org-right">139</td>
+<td class="org-right">111</td>
+<td class="org-right">1407</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgc6dc2ab" class="outline-3">
+<h3 id="orgc6dc2ab"><span class="section-number-3">2.5</span> Figures</h3>
+</div>
+</div>
+<div id="outline-container-org39453a4" class="outline-2">
+<h2 id="org39453a4"><span class="section-number-2">3</span> Org-mode in reproducible research</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-orgd8cf8d" class="outline-3">
+<h3 id="orgd8cf8d"><span class="section-number-3">3.1</span> Many published results not reproducible</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>A figure or a plot is useful to describe results</li>
+<li>53 deliberately chosen cancer research papers (novel approaches)</li>
+<li>Only 6 were reproducible (11 % cases)</li>
+<li>73 % authors: NO RESPONSE to data request (Psychology)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org81b3ef9" class="outline-3">
+<h3 id="org81b3ef9"><span class="section-number-3">3.2</span> Solution: Include data with your figures</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>The following illustrate a trivial example</li>
+<li>But there are real world examples (see email)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgafccebe" class="outline-3">
+<h3 id="orgafccebe"><span class="section-number-3">3.3</span> Toy example</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>454 reads assembled using genome assembly program (Newbler)</li>
+<li>Two varying parameters:
+<ul class="org-ul">
+<li>Minimum overlap length in bp(ml): 5, 10, 20, 30, 40, 50</li>
+<li>Minimum percentage identity (mi): 75, 80, 85, 90, 95</li>
+</ul></li>
+<li>The following snippets of code runs newbler gets the stats</li>
+</ul>
+</div>
+<div id="outline-container-orgb217adc" class="outline-4">
+<h4 id="orgb217adc"><span class="section-number-4">3.3.1</span> Newbler assembly</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #73d216;"># </span><span style="color: #73d216;">/mnt/hit2g/senthil_files/PYROPHAGE/bin/try_runassembly.sh</span>
+<span style="color: #73d216;">#</span><span style="color: #73d216;">!/bin/bash</span>
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Senthil / UNLV / October 14, 2014</span>
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Try different -ml and -mi values for assembling pyrophage data</span>
+<span style="color: #b4fa70;">for</span> mi<span style="color: #b4fa70;"> in</span> 75 80 85 90 95;
+<span style="color: #b4fa70;">do</span>
+    <span style="color: #b4fa70;">for</span> ml<span style="color: #b4fa70;"> in</span> 5 10 20 30 40 50;
+    <span style="color: #b4fa70;">do</span>
+        <span style="color: #73d216;"># </span><span style="color: #73d216;">with urt</span>
+        runAssembly -o ../results/URT_NEW_PYRO_${<span style="color: #fcaf3e;">mi</span>}_${<span style="color: #fcaf3e;">ml</span>} -force <span style="color: #e9b96e;">\</span>
+            -ml ${<span style="color: #fcaf3e;">ml</span>} -mi ${<span style="color: #fcaf3e;">mi</span>} -nobig -cpu 6 -urt <span style="color: #e9b96e;">\</span>
+            ../data/Hot_Springs_metagenome_G7162.fasta;
+    <span style="color: #b4fa70;">done</span>
+<span style="color: #b4fa70;">done</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcbde57" class="outline-4">
+<h4 id="orgcbde57"><span class="section-number-4">3.3.2</span> Get assembly stats</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<ul class="org-ul">
+<li>Use R to check assembly statistics</li>
+<li>Extract stats to output file</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #b4fa70;">for</span> i<span style="color: #b4fa70;"> in</span> $(find ../results/ -name <span style="color: #e9b96e;">"454AllContigs.fna"</span>);
+<span style="color: #b4fa70;">do</span> 
+    <span style="color: #fcaf3e;">j</span>=$(<span style="color: #e090d7;">echo</span> $<span style="color: #fcaf3e;">i</span> | cut -d <span style="color: #e9b96e;">"/"</span> -f 3);
+    <span style="color: #fcaf3e;">k1</span>=$(<span style="color: #e090d7;">echo</span> ${<span style="color: #fcaf3e;">j</span>} | cut -d<span style="color: #e9b96e;">"_"</span> -f 4);
+    <span style="color: #fcaf3e;">k2</span>=$(<span style="color: #e090d7;">echo</span> ${<span style="color: #fcaf3e;">j</span>} | cut -d <span style="color: #e9b96e;">"_"</span> -f 5);
+    <span style="color: #fcaf3e;">k3</span>=$(<span style="color: #e090d7;">echo</span> $<span style="color: #fcaf3e;">j</span> | cut -d <span style="color: #e9b96e;">"_"</span> -f 1);
+    <span style="color: #e090d7;">echo</span> -ne <span style="color: #e9b96e;">"${j}\t${k1}\t${k2}\t\"${k3}\"\t"</span>;
+    read_fasta -i ${<span style="color: #fcaf3e;">i</span>} | analyze_assembly -x <span style="color: #e9b96e;">\</span>
+        | cut -d <span style="color: #e9b96e;">":"</span> -f 2 | tr <span style="color: #e9b96e;">'\n'</span> <span style="color: #e9b96e;">'\t'</span> | sed -e <span style="color: #e9b96e;">'s/---//g'</span>;
+    <span style="color: #e090d7;">echo</span>;
+<span style="color: #b4fa70;">done</span> &gt; urt.out;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3a84b0a" class="outline-4">
+<h4 id="org3a84b0a"><span class="section-number-4">3.3.3</span> Experimental output table</h4>
+<div class="outline-text-4" id="text-3-3-3">
+<table id="org7ba4dff" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">name</th>
+<th scope="col" class="org-right">mi</th>
+<th scope="col" class="org-right">ml</th>
+<th scope="col" class="org-right">n50</th>
+<th scope="col" class="org-right">lc</th>
+<th scope="col" class="org-right">asize</th>
+<th scope="col" class="org-right">ctgs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">URT_NEW_PYRO_95_20</td>
+<td class="org-right">95</td>
+<td class="org-right">20</td>
+<td class="org-right">1686</td>
+<td class="org-right">17476</td>
+<td class="org-right">8327669</td>
+<td class="org-right">7880</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_95_30</td>
+<td class="org-right">95</td>
+<td class="org-right">30</td>
+<td class="org-right">1628</td>
+<td class="org-right">17514</td>
+<td class="org-right">8246873</td>
+<td class="org-right">8012</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_80_30</td>
+<td class="org-right">80</td>
+<td class="org-right">30</td>
+<td class="org-right">1571</td>
+<td class="org-right">15253</td>
+<td class="org-right">8427227</td>
+<td class="org-right">8594</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_95_5</td>
+<td class="org-right">95</td>
+<td class="org-right">5</td>
+<td class="org-right">1733</td>
+<td class="org-right">17514</td>
+<td class="org-right">8294156</td>
+<td class="org-right">7524</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_95_50</td>
+<td class="org-right">95</td>
+<td class="org-right">50</td>
+<td class="org-right">1511</td>
+<td class="org-right">17486</td>
+<td class="org-right">8058979</td>
+<td class="org-right">8446</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_75_50</td>
+<td class="org-right">75</td>
+<td class="org-right">50</td>
+<td class="org-right">1471</td>
+<td class="org-right">16189</td>
+<td class="org-right">8256061</td>
+<td class="org-right">8971</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_75_5</td>
+<td class="org-right">75</td>
+<td class="org-right">5</td>
+<td class="org-right">1677</td>
+<td class="org-right">17515</td>
+<td class="org-right">8490416</td>
+<td class="org-right">8100</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_95_10</td>
+<td class="org-right">95</td>
+<td class="org-right">10</td>
+<td class="org-right">1733</td>
+<td class="org-right">17476</td>
+<td class="org-right">8290778</td>
+<td class="org-right">7563</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_75_40</td>
+<td class="org-right">75</td>
+<td class="org-right">40</td>
+<td class="org-right">1526</td>
+<td class="org-right">15253</td>
+<td class="org-right">8340378</td>
+<td class="org-right">8746</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_80_10</td>
+<td class="org-right">80</td>
+<td class="org-right">10</td>
+<td class="org-right">1679</td>
+<td class="org-right">17515</td>
+<td class="org-right">8499064</td>
+<td class="org-right">8069</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_85_40</td>
+<td class="org-right">85</td>
+<td class="org-right">40</td>
+<td class="org-right">1528</td>
+<td class="org-right">15253</td>
+<td class="org-right">8314699</td>
+<td class="org-right">8702</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_80_40</td>
+<td class="org-right">80</td>
+<td class="org-right">40</td>
+<td class="org-right">1528</td>
+<td class="org-right">11866</td>
+<td class="org-right">8333476</td>
+<td class="org-right">8752</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_85_20</td>
+<td class="org-right">85</td>
+<td class="org-right">20</td>
+<td class="org-right">1624</td>
+<td class="org-right">15253</td>
+<td class="org-right">8535743</td>
+<td class="org-right">8465</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_80_50</td>
+<td class="org-right">80</td>
+<td class="org-right">50</td>
+<td class="org-right">1472</td>
+<td class="org-right">15253</td>
+<td class="org-right">8246656</td>
+<td class="org-right">8947</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_90_10</td>
+<td class="org-right">90</td>
+<td class="org-right">10</td>
+<td class="org-right">1681</td>
+<td class="org-right">17515</td>
+<td class="org-right">8494919</td>
+<td class="org-right">8079</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_85_50</td>
+<td class="org-right">85</td>
+<td class="org-right">50</td>
+<td class="org-right">1472</td>
+<td class="org-right">15253</td>
+<td class="org-right">8245814</td>
+<td class="org-right">8930</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_75_20</td>
+<td class="org-right">75</td>
+<td class="org-right">20</td>
+<td class="org-right">1623</td>
+<td class="org-right">15253</td>
+<td class="org-right">8533799</td>
+<td class="org-right">8483</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_85_30</td>
+<td class="org-right">85</td>
+<td class="org-right">30</td>
+<td class="org-right">1569</td>
+<td class="org-right">15253</td>
+<td class="org-right">8432496</td>
+<td class="org-right">8618</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_85_10</td>
+<td class="org-right">85</td>
+<td class="org-right">10</td>
+<td class="org-right">1677</td>
+<td class="org-right">17553</td>
+<td class="org-right">8499299</td>
+<td class="org-right">8089</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_90_20</td>
+<td class="org-right">90</td>
+<td class="org-right">20</td>
+<td class="org-right">1619</td>
+<td class="org-right">15253</td>
+<td class="org-right">8528845</td>
+<td class="org-right">8487</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_85_5</td>
+<td class="org-right">85</td>
+<td class="org-right">5</td>
+<td class="org-right">1677</td>
+<td class="org-right">17515</td>
+<td class="org-right">8492951</td>
+<td class="org-right">8077</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_90_30</td>
+<td class="org-right">90</td>
+<td class="org-right">30</td>
+<td class="org-right">1577</td>
+<td class="org-right">15253</td>
+<td class="org-right">8423223</td>
+<td class="org-right">8583</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_95_40</td>
+<td class="org-right">95</td>
+<td class="org-right">40</td>
+<td class="org-right">1575</td>
+<td class="org-right">17486</td>
+<td class="org-right">8125789</td>
+<td class="org-right">8085</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_75_30</td>
+<td class="org-right">75</td>
+<td class="org-right">30</td>
+<td class="org-right">1578</td>
+<td class="org-right">14477</td>
+<td class="org-right">8420677</td>
+<td class="org-right">8547</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_90_50</td>
+<td class="org-right">90</td>
+<td class="org-right">50</td>
+<td class="org-right">1477</td>
+<td class="org-right">15253</td>
+<td class="org-right">8231116</td>
+<td class="org-right">8889</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_80_5</td>
+<td class="org-right">80</td>
+<td class="org-right">5</td>
+<td class="org-right">1677</td>
+<td class="org-right">13349</td>
+<td class="org-right">8496575</td>
+<td class="org-right">8092</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_75_10</td>
+<td class="org-right">75</td>
+<td class="org-right">10</td>
+<td class="org-right">1677</td>
+<td class="org-right">17553</td>
+<td class="org-right">8498313</td>
+<td class="org-right">8074</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_80_20</td>
+<td class="org-right">80</td>
+<td class="org-right">20</td>
+<td class="org-right">1617</td>
+<td class="org-right">16530</td>
+<td class="org-right">8547131</td>
+<td class="org-right">8506</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_90_5</td>
+<td class="org-right">90</td>
+<td class="org-right">5</td>
+<td class="org-right">1680</td>
+<td class="org-right">17515</td>
+<td class="org-right">8490953</td>
+<td class="org-right">8065</td>
+</tr>
+
+<tr>
+<td class="org-left">URT_NEW_PYRO_90_40</td>
+<td class="org-right">90</td>
+<td class="org-right">40</td>
+<td class="org-right">1528</td>
+<td class="org-right">15253</td>
+<td class="org-right">8330050</td>
+<td class="org-right">8703</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgcd5cc52" class="outline-4">
+<h4 id="orgcd5cc52"><span class="section-number-4">3.3.4</span> Plot</h4>
+<div class="outline-text-4" id="text-3-3-4">
+<div class="org-src-container">
+
+<pre class="src src-R">library(ggplot2)
+mydat &lt;- read.table('urt.out', head=T, row.names=1)
+pdf('n50_ovlgth.pdf', useDingbats=FALSE)
+p &lt;- ggplot(mydat, aes(ml, n50)) +
+    geom_point(aes(colour=factor(mi))) +
+    xlab('Seq overlap (bp)') +
+    ylab('N50 (bp)')
+p &lt;- p + labs(colour='% identity')
+p + ggtitle('Sequence identity and overlap vs N50')
+dev.off()
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org7b3d87e" class="outline-3">
+<h3 id="org7b3d87e"><span class="section-number-3">3.4</span> Final result</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+<a href="./n50_ovlgth.pdf">./n50_ovlgth.pdf</a>
+</p>
+
+<ul class="org-ul">
+<li>The length of the sequence overlap between reads and the N50 are
+inversely related (Fig <a href="#orgc41141a">1</a>), higher identity (95%) resulted in
+slightly better N50.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org72e2cf7" class="outline-2">
+<h2 id="org72e2cf7"><span class="section-number-2">4</span> Exporting to other formats</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>So far, we saw how everything is text (scripts, results,
+documentation, etc)</li>
+<li>Org-mode allows exporting the text to PDF, HTML</li>
+<li>Use ~C-e C-l C-p' to get PDF</li>
+<li>Use ~C-e C-h C-h' to get HTML</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: senthil</p>
+<p class="date">Created: 2016-10-23 Sun 18:35</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
